@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interaction : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Interaction : MonoBehaviour
     public GameObject Kowalski;
     public GameObject PanelSilnia;
     public GameObject SterowniaComputer;
+    public GameObject KomputerBiblia;
+    public GameObject ship;
 
     int AstroState;
     int AstState;
@@ -28,6 +31,8 @@ public class Interaction : MonoBehaviour
     int SteState;
     int PanState;
     int CompSte;
+    int KompBiblia;
+    int win;
 
     void Start()
     {
@@ -85,6 +90,15 @@ public class Interaction : MonoBehaviour
                 Kowalski.SetActive(false);
                 SterowniaComputer.SetActive(true);
             }
+            else if (KompBiblia == 1 && PlayerPrefs.GetInt("lightsMain") == 1)
+            {
+                Kowalski.SetActive(false);
+                KomputerBiblia.SetActive(true);
+            }
+            else if (win == 1)
+            {
+                SceneManager.LoadScene(6);
+            }
         }
     }
 
@@ -125,18 +139,11 @@ public class Interaction : MonoBehaviour
             case "SilniaKomp":
                 CompSte = 1;
                 break;
-            default:
-                AstroState = 0;
-                AstState = 0;
-                AstrogatorState = 0;
-                EngState = 0;
-                InfState = 0;
-                LibState = 0;
-                ToiState = 0;
-                SteState = 0;
-                SilState = 0;
-                PanState = 0;
-                CompSte = 0;
+            case "KompBiblia":
+                KompBiblia = 1;
+                break;
+            case "win":
+                win = 1;
                 break;
         }
     }
@@ -154,5 +161,7 @@ public class Interaction : MonoBehaviour
         SilState = 0;
         PanState = 0;
         CompSte = 0;
+        KompBiblia = 0;
+        win = 0;
     }
 }

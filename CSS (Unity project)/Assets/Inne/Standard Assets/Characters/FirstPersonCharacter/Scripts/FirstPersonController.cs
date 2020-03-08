@@ -55,8 +55,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-            m_MouseLook.XSensitivity = PlayerPrefs.GetFloat("sens");
-            m_MouseLook.YSensitivity = PlayerPrefs.GetFloat("sens");
         }
 
 

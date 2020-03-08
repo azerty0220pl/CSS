@@ -8,6 +8,9 @@ public class Binds : MonoBehaviour
 {
     public GameObject light;
     public GameObject music;
+    public GameObject spaceship;
+    public GameObject CSS;
+    public GameObject Explosion;
 
     private void Start()
     {
@@ -40,5 +43,17 @@ public class Binds : MonoBehaviour
         }
 
         GetComponent<FirstPersonController>().enabled = true;
+
+        if (PlayerPrefs.GetInt("transport1") == 1)
+        {
+            PlayerPrefs.SetInt("transport1", 0);
+            spaceship.SetActive(true);
+        } else if (PlayerPrefs.GetInt("transport1") == 2)
+        {
+            PlayerPrefs.SetInt("transport1", 0);
+            CSS.SetActive(false);
+            gameObject.SetActive(false);
+            Explosion.SetActive(true);
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace DigitalRuby.Earth
 
         private MeshRenderer meshRenderer;
         private MaterialPropertyBlock materialBlock;
-
+        /*
         private void OnEnable()
         {
             meshRenderer = GetComponent<MeshRenderer>();
@@ -45,7 +45,7 @@ namespace DigitalRuby.Earth
                 Axis = Axis.normalized;
             }
         }
-
+        */
         protected override void Update()
         {
             base.Update();
