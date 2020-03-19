@@ -13,6 +13,7 @@ public class Win : MonoBehaviour
 
     public void menu()
     {
+        PlayerPrefs.SetInt("transport1", 0);
         SceneManager.LoadScene(0);
     }
 }

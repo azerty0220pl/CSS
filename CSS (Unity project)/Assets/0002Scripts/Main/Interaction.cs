@@ -142,8 +142,9 @@ public class Interaction : MonoBehaviour
             case "KompBiblia":
                 KompBiblia = 1;
                 break;
-            case "win":
+            case "Win":
                 win = 1;
+                Debug.Log("win 1");
                 break;
         }
     }

@@ -46,7 +46,6 @@ public class Binds : MonoBehaviour
 
         if (PlayerPrefs.GetInt("transport1") == 1)
         {
-            PlayerPrefs.SetInt("transport1", 0);
             spaceship.SetActive(true);
         } else if (PlayerPrefs.GetInt("transport1") == 2)
         {
