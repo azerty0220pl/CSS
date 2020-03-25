@@ -85,6 +85,11 @@ public class KomputerSterownia : MonoBehaviour
 
             Debug.Log(PlayerPrefs.GetInt("transport1"));
 
+            if (message == "azerty0220pl")
+            {
+                PlayerPrefs.SetInt("transport1", 220);
+            }
+
             if (character == 1)
             {
                 character01 = int.Parse(message) - 14;
